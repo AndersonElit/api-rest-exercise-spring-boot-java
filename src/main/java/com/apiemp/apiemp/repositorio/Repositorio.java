@@ -47,8 +47,9 @@ public class Repositorio implements RepositorioInt {
 				List<Modelo> list = new ArrayList<Modelo>();
 				while (rs.next()) {
 					Modelo empresa = new Modelo();
-					empresa.setId(rs.getInt("id_empresa"));
-					empresa.setNombre(rs.getString("nombre"));
+					empresa.setId(rs.getInt("ID_EMPRESA"));
+					empresa.setNombre(rs.getString("NOMBRE"));
+					list.add(empresa);
 				}
 				return list;
 			}

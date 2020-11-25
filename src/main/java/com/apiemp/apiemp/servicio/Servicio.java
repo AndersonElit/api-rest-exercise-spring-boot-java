@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.apiemp.apiemp.modelo.Modelo;
 import com.apiemp.apiemp.repositorio.Repositorio;
@@ -15,7 +14,6 @@ public class Servicio implements ServicioInt {
 	@Autowired
 	private Repositorio repo;
 	
-	@Transactional
 	public void insertarEmpresa(Modelo mod) {
 		repo.insertarEmpresa(mod);
 		System.out.println("se agrego una empresa");
@@ -31,7 +29,6 @@ public class Servicio implements ServicioInt {
 		System.out.println("se edito la empresa");
 	}
 	
-	@Transactional
 	public List<Modelo> listarEmpresas() {
 		return repo.listaEmpresas();
 	}
