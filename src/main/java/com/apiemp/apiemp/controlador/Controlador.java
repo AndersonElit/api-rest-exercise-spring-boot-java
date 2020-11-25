@@ -1,5 +1,7 @@
 package com.apiemp.apiemp.controlador;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,6 +26,16 @@ public class Controlador implements ControladorInt {
 	@RequestMapping(value="/eliminarEmp/{id}", method = RequestMethod.DELETE)
 	public void eliminarEmp(@PathVariable int id) {
 		serv.eliminarEmpresa(id);
+	}
+	
+	@RequestMapping(value="/editarEmp/{id}/{nuevoNombre}", method = RequestMethod.PUT)
+	public void editarEmp(@PathVariable int id, @PathVariable String nuevoNombre) {
+		serv.editarEmpresa(id, nuevoNombre);
+	}
+	
+	@RequestMapping(value="/listaEmpresas", method = RequestMethod.GET)
+	public List<Modelo> listarEmp() {
+		return serv.listarEmpresas();
 	}
 
 }
